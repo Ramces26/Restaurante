@@ -15,6 +15,7 @@ namespace AngularProyecto.Controllers
         // GET: Personas
         public ActionResult Index()
         {
+            ViewBag.prueba = "Exito";
             return View(new MPersonas().GetPersonas());
         }
 
