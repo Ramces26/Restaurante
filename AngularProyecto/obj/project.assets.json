@@ -12624,11 +12624,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Developer\\3D Objects\\Clon\\Restaurante\\AngularProyecto\\AngularProyecto.csproj",
+      "projectUniqueName": "C:\\Users\\Developer\\3D Objects\\Clon\\Restaurante\\Restaurante\\AngularProyecto\\AngularProyecto.csproj",
       "projectName": "AngularProyecto",
-      "projectPath": "C:\\Users\\Developer\\3D Objects\\Clon\\Restaurante\\AngularProyecto\\AngularProyecto.csproj",
+      "projectPath": "C:\\Users\\Developer\\3D Objects\\Clon\\Restaurante\\Restaurante\\AngularProyecto\\AngularProyecto.csproj",
       "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Developer\\3D Objects\\Clon\\Restaurante\\AngularProyecto\\obj\\",
+      "outputPath": "C:\\Users\\Developer\\3D Objects\\Clon\\Restaurante\\Restaurante\\AngularProyecto\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
