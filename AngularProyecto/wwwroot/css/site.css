@@ -1,0 +1,96 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+aside {
+
+    background-color: #337ab7;
+    position: relative;
+    width: 250px;
+    float: left;
+    z-index: 9;
+    top: 0px;
+    border-right: 1px solid rgba(120, 130, 140, 0.13);
+}
+aside ul li a{
+color:white;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size:large;
+}
+aside ul li:hover {
+background-color:silver;
+width:100%;
+}
+/*#listaheader ul li a {
+    color: white;
+    font-size: large;
+    float:right;
+    list-style-type:none;
+}*/
+
+#listaheader a {
+    color: white;
+    font-size: large;
+    float: right;
+}
+#listaheader ul li a:hover {
+color:darkgray;
+
+}
+/*#usuario {
+    float: right;
+}*/
+#contenedorlogin {
+    border: 1px solid #ccc;
+    padding: 0 1rem;
+    margin: 1rem;
+    background-image:url(../images/imagen1.jpg);
+    /*width:300px;
+    height:225px;
+   margin-left:15%;
+   margin-right:20%;
+   margin-top:25%;*/
+
+    /*margin-left:auto;
+    margin-right:25%;*/
+}
+#contenedorlogin2 {
+    /*background-color: yellow;*/
+    /* IMPORTANTE */
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

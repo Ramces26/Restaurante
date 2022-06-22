@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Permisos>
+@{
+    ViewData["Title"] = "Inicio";
+    ViewBag.Url = "Permisos";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div id="indexpermiso">
+    <h2>Permisos</h2>
+    @*@Html.ActionLink("Agregar", "Create", "Permisos")*@
+    <button type="button" class="btn btn-primary" id="btnagregar">Agregar</button>
+    </br>
+    </br>
+
+    <table id="tblpermiso" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripcion</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IdPermisos</td>
+                        <td>@item.Descripcion</td>
+                        <td>
+                            @if (item.Estado == true)
+                            {
+                                <span class="badge text-bg-success">Activo</span>
+                            }
+                            else
+                            {
+                                <span class="badge text-bg-danger">Anulado</span>
+                            }
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info">Editar</button>
+                            <button onclick="AnularPermiso(@item.IdPermisos)" type="button" class="btn btn-danger">Anular</button>
+                        </td>
+                    </tr>
+                }
+
+            }
+            @if (Model == null)
+            {
+                <tr>
+                    <td>Sin Datos</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@await Html.PartialAsync("~/Views/Shared/_Modal.cshtml")
+<script src="~/js/ScriptJS/Permisos.js"></script>

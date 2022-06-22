@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Personas>
+@{
+    ViewData["Title"] = "Inicio";
+    ViewBag.Url = "Personas";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div id="indexpersona">
+    <h2>Personas</h2>
+    @*@Html.ActionLink("Agregar", "Create", "Permisos")*@
+    <button type="button" class="btn btn-primary" id="btnagregar">Agregar</button>
+    </br>
+    </br>
+    <table id="tblpersona" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Sexo</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IdPersona</td>
+                        <td>@item.Cedula</td>
+                        <td>@(item.PNombre+" "+item.SNombre+" "+item.PApellido+" "+item.SApelldio)</td>
+                        <td>@item.Sexo</td>
+                        <td>
+                            @if (item.Estado == true)
+                            {
+                                <span class="badge text-bg-success">Activo</span>
+                            }
+                            else
+                            {
+                                <span class="badge text-bg-danger">Anulado</span>
+                            }
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info">Editar</button>
+                            <button type="button" class="btn btn-danger">Anular</button>
+                        </td>
+                    </tr>
+                }
+
+            }
+            @if (Model == null)
+            {
+                <tr>
+                    <td>Sin Datos</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@await Html.PartialAsync("~/Views/Shared/_Modal.cshtml")
+<script src="~/js/ScriptJS/Personasjs.js"></script>

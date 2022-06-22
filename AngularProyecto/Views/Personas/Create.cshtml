@@ -1,0 +1,137 @@
+﻿@model AngularProyecto.Models.Personas
+
+@{
+    ViewData["Title"] = "Create";
+    //Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+@*<h2>Create</h2>*@
+
+<h4>Crear Personas</h4>
+<hr />
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-4">
+            @*<div class="form-group">
+                    <label asp-for="IdPersona" class="control-label"></label>
+                    <input asp-for="IdPersona" class="form-control" />
+                    <span asp-validation-for="IdPersona" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <label asp-for="Cedula" class="control-label"></label>
+                <input asp-for="Cedula" class="form-control" />
+                <span asp-validation-for="Cedula" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="PNombre" class="control-label"></label>
+                <input asp-for="PNombre" class="form-control" />
+                <span asp-validation-for="PNombre" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="SNombre" class="control-label"></label>
+                <input asp-for="SNombre" class="form-control" />
+                <span asp-validation-for="SNombre" class="text-danger"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="PApellido" class="control-label"></label>
+                <input asp-for="PApellido" class="form-control" />
+                <span asp-validation-for="PApellido" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="SApelldio" class="control-label"></label>
+                <input asp-for="SApelldio" class="form-control" />
+                <span asp-validation-for="SApelldio" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Sexo" class="control-label"></label>
+                @*<input asp-for="Sexo" class="form-control" />*@
+                <select class="form-control" asp-for="Sexo">
+                    <option value="">----Seleccion----</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+                <span asp-validation-for="Sexo" class="text-danger"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <input asp-for="FechaNacimiento" type="date" class="form-control" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="EstadoCivil" class="control-label"></label>
+                @*<input asp-for="EstadoCivil" class="form-control" />*@
+                <select class="form-control" asp-for="EstadoCivil">
+                    <option value="">----Seleccion----</option>
+                    <option value="Soltero(a)">Soltero(a)</option>
+                    <option value="Casado(a)">Casado(a)</option>
+                    <option value="Viudo(a)">Viudo(a)</option>
+                </select>
+                <span asp-validation-for="EstadoCivil" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Celular" class="control-label"></label>
+                <input asp-for="Celular" class="form-control" />
+                <span asp-validation-for="Celular" class="text-danger"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Correo" class="control-label"></label>
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Direccion" class="control-label"></label>
+                <input asp-for="Direccion" class="form-control" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-default" id="btnsavepersona">Guardar</button>
+    </div>
+</form>
+@*<div>
+        <a asp-action="Index">Regresar</a>
+    </div>*@
+<script src="~/js/ScriptJS/Personasjs.js"></script>
