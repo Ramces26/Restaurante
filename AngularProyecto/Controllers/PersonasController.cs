@@ -70,7 +70,38 @@ namespace AngularProyecto.Controllers
                 return Json(new { isValid = false, data = ex.Message, opcion = 4 });
             }
         }
-
+        [HttpPost]
+        public ActionResult Anular(int id)
+        {
+            string Resultado;
+            int opciones = 0;
+            bool bandera = false;
+            string Renderpagina = string.Empty;
+            try
+            {
+                // TODO: Add insert logic here
+                Resultado = new MPersonas().AnularPersona(id);
+                //return  View(Resultado);
+                if (Resultado == "No encontrado")
+                {
+                    opciones = 2;
+                }
+                if (Resultado == "Anulado")
+                {
+                    opciones = 1;
+                    bandera = true;
+                    var data = new MPersonas().GetPersonas();
+                    Renderpagina = MConexion.RenderPartialViewToString(this, "Index", data);
+                }
+                return Json(new { isValid = bandera, data = Renderpagina, opcion = opciones });
+            }
+            catch (Exception ex)
+            {
+                Resultado = ex.Message;
+                opciones = 3;
+                return Json(new { isValid = false, data = ex.Message, opcion = 4 });
+            }
+        }
         // GET: Personas/Edit/5
         public ActionResult Edit(int id)
         {

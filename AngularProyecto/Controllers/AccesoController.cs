@@ -7,12 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using AngularProyecto.Models;
 using AngularProyecto.ModelsMetodos;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Configuration;
 
 namespace AngularProyecto.Controllers
 {
     public class AccesoController : Controller
     {
-
+        private IConfiguration configuration;
         public ActionResult Logeo()
         {
             return View();
@@ -50,11 +51,31 @@ namespace AngularProyecto.Controllers
                 return Json(new { isValid = false, opcion = opciones });
             }
         }
+        public AccesoController (IConfiguration _configuration)
+        {
+            configuration = _configuration;
+        }
 
-        //public ActionResult MenuHeader()
-        //{
-        //    return PartialView("~/Views/Shared/_NavHeader.cshtml", MConexion.GetListaLogeo());
-        //}
+        public IActionResult ConfigServidor()
+        {
+            //Metodo para leer json de configuracion de la base de datos
+            string serv = this.configuration.GetConnectionString("Host");
+            string catalo = this.configuration.GetConnectionString("Catalogo");
+            string Connprueba = @"Data Source=" + serv + ";Initial Catalog=" + catalo + ";Integrated Security=True";
+            Console.Write(Connprueba);
+
+
+            //Metodo para editar json de configuracion de la base de datos
+            //var op=new Servidor {Host="..",Catalogo="Restaurante2" };
+            //string json = JsonConvert.SerializeObject(op);
+            //string json2 = "{'ConnectionStrings':"+json+"}";
+            //string filepath = string.Empty;
+            //string path = @"../AngularProyecto/appsettings.json";
+            //System.IO.File.WriteAllText(path,json2);
+            return View("~/Views/Acceso/ConfigServidor.cshtml");
+        }
+
+
 
         public ActionResult Index()
         {

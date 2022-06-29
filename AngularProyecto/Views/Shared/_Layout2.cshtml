@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AngularProyecto-layout2</title>
     <link href="~/css/site.css" rel="stylesheet" />
+    @*<link href="~/css/bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/css/all.css" rel="stylesheet" />
     <link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="~/css/sweetalertcss.css" rel="stylesheet" />
 
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/ScriptJS/jquery-3.5.1.js"></script>
+    @*<script src="~/js/bootstrap.min.js"></script>*@
+    <script src="~/js/all.js"></script>
     <script src="~/js/jquery.dataTables.min.js"></script>
     <script src="~/js/sweetalert.js"></script>
     <environment include="Development">
@@ -25,8 +29,9 @@
 </head>
 <body>
     @await Html.PartialAsync("~/Views/Shared/_NavHeader.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/_MenuIzquierdo.cshtml")
     <div id="contenedor">
-        @await Html.PartialAsync("~/Views/Shared/_MenuIzquierdo.cshtml")
+
         @*<partial name="_CookieConsentPartial" />*@
 
         <div class="container body-content">
@@ -38,12 +43,11 @@
 
         </div>
     </div>
-    
 
     <environment include="Development">
         @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
         @*<script src="~/js/ScriptJS/jquery-3.5.1.js"></script>
-        <script src="~/js/jquery.min.js"></script>*@
+            <script src="~/js/jquery.min.js"></script>*@
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         @*<script src="~/js/jquery.ui.datepicker.js"></script>*@
         @*<script src="~/ScriptAngular/angular-1.8.2/angular.min.js"></script>*@

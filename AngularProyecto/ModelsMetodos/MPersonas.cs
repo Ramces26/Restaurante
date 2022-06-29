@@ -93,5 +93,29 @@ namespace AngularProyecto.ModelsMetodos
             }
             return Resultado;
         }
+        public string AnularPersona(int id)
+        {
+            string Resultado;
+            try
+            {
+                dt.Clear();
+                using (SqlCommand sqlCommand = new SqlCommand("AnularPersona", conext))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Id", id);
+                    conext.Open();
+                    var adapter = new SqlDataAdapter(sqlCommand);
+                    adapter.Fill(dt);
+                    Resultado = (from DataRow dr in dt.Tables[0].Rows
+                                 select dr["ResultadoFinal"].ToString()).FirstOrDefault();
+                    conext.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Resultado = ex.Message;
+            }
+            return Resultado;
+        }
     }
 }

@@ -8,9 +8,7 @@
 <div id="indexpersona">
     <h2>Personas</h2>
     @*@Html.ActionLink("Agregar", "Create", "Permisos")*@
-    <button type="button" class="btn btn-primary" id="btnagregar">Agregar Persona erv</button>
-    </br>
-    </br>
+    <button type="button" class="btn btn-primary" id="btnagregar">Agregar Persona</button>
     <table id="tblpersona" class="table table-bordered">
         <thead>
             <tr>
@@ -45,7 +43,7 @@
                         </td>
                         <td>
                             <button type="button" class="btn btn-info">Editar</button>
-                            <button type="button" class="btn btn-danger">Anular</button>
+                            <button onclick="AnularPersonas(@item.IdPersona)" type="button" class="btn btn-danger" >Anular</button>
                         </td>
                     </tr>
                 }

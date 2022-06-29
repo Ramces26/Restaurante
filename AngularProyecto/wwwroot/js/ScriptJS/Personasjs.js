@@ -56,6 +56,27 @@ $("#btnsavepersona").click(function () {
     }
 });
 
+function AnularPersonas(IdPersona) {
+    $.ajax({
+        data: { id: IdPersona },
+        url: "/Personas/Anular",
+        type: "POST",
+        success: function (d) {
+            //alert(d.data);
+            if (d.opcion === 1) {
+                $('#modal1').hide();
+                $('#contenedor').html(d.data);
+            }
+            if (d.opcion === 2) {
+                alert("No encontrado");
+            }
+        }
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        //Swal.fire("ERROR", '@SACIERPYCRM.strings.ErrorCode', "error");
+        alert("Error al guardar");
+    });
+}
+
 $(document).ready(function () {
     $('#tblpersona').DataTable();
 });
